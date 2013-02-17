@@ -1,0 +1,442 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Shot Tracker</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<Link rel="stylesheet" href="css/style.css"/>
+	<script src="js/libs/modernizr.custom.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="homescreen" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="ST" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+		  	<div style="margin: 0px auto 0px auto; text-align: center;">
+		  		<ul style="list-style: none; text-decoration: blink; font-size:30px;">
+		  			<li><a href="appformvfw.html" data-ajax="false" style="color: purple;">Add A Game Now!</li>		
+		  			<img src="images/miup1.jpg"  style="width:75px;height:75px"/>
+				</ul>
+			</div>		
+			<h1 style="color: blue;" align="center">Browse</h1>			
+			<div style="margin: 0px auto 0px auto; text-align: center;">
+				<ul style="list-style: none;">
+					<li><a href="appformvfw.html" data-ajax="false" data-role="button"> Add A Game </a>
+	 				<li><a href="#gamerecord" data-role="button"> View Past Games </a> 
+				</ul>
+			</div>
+			<h1 style="color: blue;" align="center">Things To Do Between Games</h1>	
+			<div style="margin: 0px auto 0px auto; text-align: center;">
+				<ul style="list-style: none;">
+					<li><a href="#guypage" data-role="button">Tap Here If Your A Guy </a>
+	 				<li><a href="#girlpage" data-role="button"> Tap Here If Your A Girl </a> 
+	 			</ul>
+			</div>
+			<label for="search-mini">Search Input:</label>
+			<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-position="fixed" data-theme="c">
+			<ul>
+				<li><a href="index.html" rel="external" data-ajax="false" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#halloffame" data-icon="star" data-iconpos="bottom" data-transition="slide">HOF</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="guypage" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="sT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<h1 align="center">Men's Locker Room</h1>	
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">		
+				<h3>Auto</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.edmunds.com/">Edmunds</a></li>
+						<li><a href="http://www.caranddriver.com/">Car and Driver</a></li>
+						<li><a href="http://www.kbb.com/">Kelly Blue Book</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Basketball</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.nba.com/">NBA</a></li>
+						<li><a href="http://espn.go.com/mens-college-basketball/">NCAA</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Baseball</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.mlb.com/">MLB</a></li>
+						<li><a href="http://www.collegebaseballinsider.com/">NCAA</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Boxing</h3>
+					<ul data-role="listview">
+						<li><a href="http://espn.go.com/boxing/">Pro Boxing</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Clothes</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.gq.com/">GQ</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Diet</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.mensfitness.com/">Mens Fitness</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Food</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.foodnetwork.com/">Food Network</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Fitness</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.bodybuilding.com/">Bodybuilding.com</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Games</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.gamefly.com/">Gamefly</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Hockey</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.nhl.com/">NHL</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>MMA</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.ufc.com/">UFC</a></li>
+						<li><a href="http://espn.go.com/mma/">ESPN</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Money</h3>
+					<ul data-role="listview">
+						<li><a href="http://online.wsj.com/">Wall Street Journal</a></li>
+						<li><a href="http://www.bloomberg.com/">Bloomberg</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>News</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.cnn.com/">CNN</a></li>
+						<li><a href="http://www.foxnews.com/">Fox News</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Soccer</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.mlssoccer.com/">MLS</a></li>
+						<li><a href="http://www.premierleague.com/">English Premier League</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Shoes</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.footlocker.com/">Foot Locker</a></li>
+						<li><a href="http://www.zappos.com/shoes">Zappos</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Tennis</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.tennis.com/">Tennis.com</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Track and Field</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.trackandfieldnews.com/">Track and Field News</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Women</h3>
+					<ul data-role="listview">
+						<li><a href="http://news.menshealth.com/be-more-popular—without...a.../21/">Help With Women</a></li>
+					</ul>
+			</div>
+		</div>
+		
+		<div data-role="navbar" data-id="mainnav" data-position="fixed" data-theme="c">
+			<ul>
+				<li><a href="index.html" rel="external" data-ajax="false" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#halloffame" data-icon="star" data-iconpos="bottom" data-transition="slide">HOF</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>	
+	</div>
+	
+	<div data-role="page" id="girlpage" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="sT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">	
+			<h1 align="center">Ladies Locker Room</h1>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">		
+				<h3>Clothes</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.charlotterusse.com/">Charlotte Russe</a></li>
+						<li><a href="http://www.macys.com/">Macy's</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Diet</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.webmd.com/diet/default.htm/">WebMD</a></li>
+						<li><a href="http://www.womenshealthmag.com/">Women's Health</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Fashion</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.vogue.com/">Vogue</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Fitness</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.fitnessmagazine.com/">Fitness Magazine</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Gossip</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.tmz.com/">TMZ</a></li>
+					</ul>
+					<ul data-role="listview">
+						<li><a href="http://www.mediatakeout.com/">MediaTakeOut</a></li>
+					</ul>
+					<ul data-role="listview">
+						<li><a href="http://www.necolebitchie.com/">Necole Bitchie</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Makeup</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.maccosmetics.com/">MAC</a></li>
+					</ul>
+					<ul data-role="listview">
+						<li><a href="http://www.loreal.com/">Loreal</a></li>
+					</ul>
+					<ul data-role="listview">
+						<li><a href="http://www.covergirl.com/">CoverGirl</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>Money</h3>
+					<ul data-role="listview">
+						<li><a href="http://online.wsj.com/">Wall Street Journal</a></li>
+						<li><a href="http://www.bloomberg.com/">Bloomberg</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>News</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.cnn.com/">CNN</a></li>
+						<li><a href="http://www.foxnews.com/">Fox News</a></li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-theme="c" data-filter="true">
+				<h3>TV</h3>
+					<ul data-role="listview">
+						<li><a href="http://www.bravotv.com/">Bravo</a></li>
+					</ul>
+					<ul data-role="listview">
+						<li><a href="http://www.vh1.com/">Vh1</a></li>
+					</ul>
+					<ul data-role="listview">
+						<li><a href="http://www.oprah.com/own">OWN</a></li>
+					</ul>
+			</div>
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-position="fixed" data-theme="c">
+			<ul>
+				<li><a href="index.html" rel="external" data-ajax="false" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#halloffame" data-icon="star" data-iconpos="bottom" data-transition="slide">HOF</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>	
+	</div>
+
+	<div data-role="page" id="about" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="sT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<div>
+				<ul>
+					<p>Note Tracker is a free application aimed at helping users track things they may easily forget.</p>
+					<p>Check out Note Tracker Bronze on Github,<a href="bronze.html" data-ajax="false">here</a>.</p>
+					<p>Check out Note Tracker Gold on Github,<a href="bronze.html" data-ajax="false">here</a>.</p>
+					<p>Try Note Tracker Bronze,<a href="bronze.html" data-ajax="false">here</a>.</p>
+					<p>Try Note Tracker Gold,<a href="index.html" data-ajax="false">here</a>.</p>
+				</ul>
+			</div>		
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="index.html" rel="external" data-ajax="false" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#halloffame" data-icon="star" data-iconpos="bottom" data-transition="slide">HOF</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="guyhalloffame" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="sT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content" align="center">
+		<h1 align="center">Hall of Fame</h1>		
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Michael_Jordan" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic1.jpg" alt="Michael Jordan" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Magic_Johnson" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic2.jpg" alt="Magic Johnson" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Robert_Griffin_III" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic3.jpg" alt="RGIII" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Peyton_Manning" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic4.jpg" alt="Peyton Manning" style="width: 80px; height: 80px" /></a></div>
+				</div>
+			
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Ken_Griffey,_Jr" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic5.jpg" alt="Ken Griffey Jr." style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Larry_Bird" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic6.jpg" alt="Larry Bird" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Brett_Favre" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic7.jpg" alt="Brett Favre" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Deion_Sanders" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic8.jpg" alt="Deion Sanders" style="width: 80px; height: 80px" /></a></div>
+				</div>
+				
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Derrick_Rose" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic9.jpg" alt="Derrick Rose" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Kevin_Durant" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic10.jpg" alt="Kevin Durant" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Dwyane_Wade" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic11.jpg" alt="Dwayne Wade" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/LeBron_James" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic12.jpg" alt="Lebron James" style="width: 80px; height: 80px" /></a></div>
+				</div>
+				
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/David_Beckham" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic13.jpg" alt="David Beckham" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Derek_Jeter" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic14.jpg" alt="Derek Jeter" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Cristiano_Ronaldo" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic15.jpg" alt="Cristiano Ronaldo" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Lionel_Messi" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic16.jpg" alt="Lionel Messi" style="width: 80px; height: 80px" /></a></div>
+				</div>
+				
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Ray_Lewis" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic17.jpg" alt="Ray Lewis" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Kobe_Bryant" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic18.jpg" alt="Kobe Bryant" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Tom_Brady" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic19.jpg" alt="Tom Brady" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Wayne_Gretzky" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic20.jpg" alt="Wayne Gretzky" style="width: 80px; height: 80px" /></a></div>
+				</div>
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="index.html" rel="external" data-ajax="false" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#halloffame" data-icon="star" data-iconpos="bottom" data-transition="slide">HOF</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="girlhalloffame" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="sT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content" align="center">
+		<h1 align="center">Hall of Fame</h1>		
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Hope_Solo" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic21.jpg" alt="Hope Solo" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Mia_Hamm" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic22.jpg" alt="Mia Hamm" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Sheryl_Swoopes" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic23.jpg" alt="Sheryl Swoopes" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Cheryl_Miller" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic24.jpg" alt="Cheryl Miller" style="width: 80px; height: 80px" /></a></div>
+				</div>
+			
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Abby_Wambach" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic25.jpg" alt="Abby Wambach" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Venus_Williams" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic26.jpg" alt="Venus Williams" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Serena_Williams" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic27.jpg" alt="Serena Williams" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Steffi_Graf" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic28.jpg" alt="Steffi Graf" style="width: 80px; height: 80px" /></a></div>
+				</div>
+				
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Billie_Jean_King" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic29.jpg" alt="Billie Jean King" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Rebecca_Lobo" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic30.jpg" alt="Rebecca Lobo" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Misty_May-Treanor" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic31.jpg" alt="Misty May-Treanor" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Kerri_Walsh_Jennings" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic32.jpg" alt="Kerri Walsh" style="width: 80px; height: 80px" /></a></div>
+				</div>
+				
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Dominique_Dawes" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic33.jpg" alt="Dominique Dawes" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Kerri_Strug" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic34.jpg" alt="Kerri Strug" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Gabby_Douglas" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic35.jpg" alt="Gabby Douglas" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Candace_Parker" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic36.jpg" alt="Candace Parker" style="width: 80px; height: 80px" /></a></div>
+				</div>
+				
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><a href="en.wikipedia.org/wiki/Lisa_Leslie" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic37.jpg" alt="Lisa Leslie" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-b"><a href="en.wikipedia.org/wiki/Diana_Taurasi" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic38.jpg" alt="Diana Taurasi" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-c"><a href="en.wikipedia.org/wiki/Dara_Torres" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic39.jpg" alt="Dara Torres" style="width: 80px; height: 80px" /></a></div>
+					<div class="ui-block-d"><a href="en.wikipedia.org/wiki/Marta_(footballer)" rel="external" data-ajax="false" data-transition="pop"><img src="images/pic40.jpg" alt="Marta" style="width: 80px; height: 80px" /></a></div>
+				</div>
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="index.html" rel="external" data-ajax="false" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#halloffame" data-icon="star" data-iconpos="bottom" data-transition="slide">HOF</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="halloffame" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="sT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content" align="center">
+		<h1 align="center">Hall of Fame</h1>		
+				<p><a href="#guyhalloffame">Hall of Fame for Men Here!!</a></p>
+				<p><a href="#girlhalloffame">Hall of Fame for Women Here!!</a></p>
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="index.html" rel="external" data-ajax="false" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#halloffame" data-icon="star" data-iconpos="bottom" data-transition="slide">HOF</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+</div>	
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.0.0.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+</body>
+</html>

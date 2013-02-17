@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- Dorian Lane -->
+<!-- VFW 0812 -->
+<!-- August 2012 -->
+<html>
+	<head>
+		<!-- Character Set Meta -->
+		<meta charset="utf-8" >
+		<meta name="keywords"  content="note, track, memo" />
+		<meta name="description"  content="Shot Tracker is an application aimed at helping basketball players track points scored in a game and enjoy the pleasures of the internet."  />
+		<meta name="robots"   content="index, follow"       />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"     />
+		<LINK REL=StyleSheet HREF="css/form.css" TYPE="text/css">
+		<title>Shot Tracker</title>	
+	</head>
+	<body id="gameform">
+		<h1>Shot Tracker</h1>
+	 
+	 	
+		<form id="myContent">
+		  		<fieldset>
+		  			<legend>
+		  			<ul id="errors"></ul>
+		  			<ul style="list-style: none;" id="formfield">
+						<li id="select"><label for="PositionPlayed">Position Played:</label></li>
+					
+						<li><label for="Date">Date:</label> <input type="date" name="Date" id="Date"></li> 
+							
+						<li><label for="PointsScored">Points Scored</label></li>
+							<input type="range" min="0" max="100" id="PointsScored" />
+							
+						<li><label for="Start" id="Start">Did You Start?</label></li>
+					
+							<input type="radio" id="Yes" name="memory" value="Yes" />Yes<label for="Start"></label></li>
+							<input type="radio" id="No"  name="memory" value="No" />No<label for="Start"></label></li> 
+					
+						<li><label for="Notes">Game Notes:</label></li>
+							<textarea rows="10" cols="30" name="Notes" id="Notes"></textarea>
+							
+						<li><label for="Submit"></label></li>
+							<input type="Submit" value="Add Game" id="Submit" name="Submit" />
+					</ul>
+				</legend>
+			</fieldset>
+		</form>
+		<ul style="list-style: none;">
+		<a href="#" id="clear"> Clear Stored Data </a> &nbsp;
+	 	<a href="#" id="displaylink"> Display Data </a> &nbsp;
+		<a href="appformvfw.html" id="addnew" input type="hidden"> Add New Note </a>
+		<ul>
+		<script type="text/javascript" src="js/json.js"></script>
+		<script type="text/javascript" src="js/new.js"></script>	
+	</body>
+</html>

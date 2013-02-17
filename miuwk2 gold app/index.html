@@ -1,0 +1,944 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Shot Tracker</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<Link rel="stylesheet" href="css/style.css"/>
+	<script src="js/libs/modernizr.custom.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="homescreen" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="ST" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+		  	<div style="margin: 0px auto 0px auto; text-align: center;">
+		  		<ul style="list-style: none; text-decoration: blink; font-size:30px;">
+		  			<li><a href="appformvfw.html" data-ajax="false" style="color: red;">Add A Game Now!</li>	
+		  				<img src="images/miup1.jpg" style="width:75px;height:75px" />
+				</ul>
+			</div>	
+			<h1 style="color: blue;" align="center">Browse</h1>			
+			<div style="margin: 0px auto 0px auto; text-align: center;">
+				<ul style="list-style: none;">
+					<li><a href="appformvfw.html" data-ajax="false" data-role="button"> Add A Game </a>
+	 				<li><a href="#gamerecord" data-role="button"> View Past Games </a> 
+				</ul>
+			</div>
+			<h1 style="color: blue;" align="center">Things To Do Between Games</h1>	
+			<div style="margin: 0px auto 0px auto; text-align: center;">
+				<ul style="list-style: none;">
+					<li><a href="#guypage" data-role="button">Tap Here If Your A Guy </a>
+	 				<li><a href="#girlpage" data-role="button"> Tap Here If Your A Girl </a> 
+	 			</ul>
+			</div>
+			<label for="search-mini">Search Input:</label>
+			<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-position="fixed" data-theme="c">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="guypage" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<h1 align="center">Guy's Corner</h1>	
+			<ul data-role="listview" data-theme="c" data-filter="true" id="guypage">		
+				<li><a href="#auto" data-transition="flip">Auto</a></li>
+				<li><a href="#basketball" data-transition="flip">Basketball</a></li>
+				<li><a href="#baseball" data-transition="flip">Baseball</a></li>
+				<li><a href="#boxing" data-transition="flip">Boxing</a></li>
+				<li><a href="#clothes" data-transition="flip">Clothes</a></li>
+				<li><a href="#diet" data-transition="flip">Diet</a></li>
+				<li><a href="#food" data-transition="flip">Food</a></li>
+				<li><a href="#fitness" data-transition="flip">Fitness</a></li>
+				<li><a href="#games" data-transition="flip">Games</a></li>
+				<li><a href="#hockey" data-transition="flip">Hockey</a></li>
+				<li><a href="#mma" data-transition="flip">MMA</a></li>
+				<li><a href="#money" data-transition="flip">Money</a></li>
+				<li><a href="#news" data-transition="flip">News</a></li>
+				<li><a href="#soccer" data-transition="flip">Soccer</a></li>
+				<li><a href="#shoes" data-transition="flip">Shoes</a></li>
+				<li><a href="#trackandfield" data-transition="flip">Track and Field</a></li>
+				<li><a href="#tennis" data-transition="flip">Tennis</a></li>
+				<li><a href="#women" data-transition="flip">Women</a></li>
+			</ul>
+		</div>
+		
+		<div data-role="navbar" data-id="mainnav" data-position="fixed" data-theme="c">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+		
+	</div>
+	
+	<div data-role="page" id="girlpage" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">	
+			<h1 align="center">Gal's Corner</h1>	
+			<ul data-role="listview" data-theme="c" data-filter="true" id="girlpage">		
+				<li><a href="#clothes2" data-transition="flip">Clothes</a></li>
+				<li><a href="#diet2" data-transition="flip">Diet</a></li>
+				<li><a href="#fashion" data-transition="flip">Fashion</a></li>
+				<li><a href="#fitness2" data-transition="flip">Fitness</a></li>
+				<li><a href="#gossip" data-transition="flip">Gossip</a></li>
+				<li><a href="#makeup" data-transition="flip">Makeup</a></li>
+				<li><a href="#money" data-transition="flip">Money</a></li>
+				<li><a href="#news" data-transition="flip">News</a></li>
+				<li><a href="#tv" data-transition="flip">TV</a></li>
+			</ul>
+		</div>
+		
+		<div data-role="navbar" data-id="mainnav" data-position="fixed" data-theme="c">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>	
+	</div>
+
+	<div data-role="page" id="about" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<div>
+				<ul>
+					<p>Note Tracker is a free application aimed at helping users track things they may easily forget.</p>
+					<p>Check out Note Tracker Bronze on Github,<a href="bronze.html" data-ajax="false">here</a>.</p>
+					<p>Check out Note Tracker Gold on Github,<a href="bronze.html" data-ajax="false">here</a>.</p>
+					<p>Try Note Tracker Bronze,<a href="bronze.html" data-ajax="false">here</a>.</p>
+					<p>Try Note Tracker Gold,<a href="index.html" data-ajax="false">here</a>.</p>
+				</ul>
+			</div>		
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+		
+	<div data-role="page" id="auto" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>	
+		<div data-role="content">
+		<h2 align="center">Auto</h2>
+			<div>
+				<ul data-role="listview">
+					<li><a href="http://www.edmunds.com/">
+						<img src="images/edmunds.jpg" alt="Edmunds">
+						<h3>Edmund's</h3>
+					</a></li>
+					<li><a href="http://www.caranddriver.com/">
+						<img src="images/caranddriver.jpg" alt="Car and Driver">
+						<h3>Car and Driver</h3>
+					</a></li>
+					<li><a href="http:/www.kbb.com/">
+						<img src="images/kbb.jpg" alt="Kelly Blue Book">
+						<h3>KBB</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="basketball" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>	
+		<div data-role="content">
+			<div>
+			<h2 align="center">Basketball</h2>
+				<ul data-role="listview">
+					<li><a href="http://www.nba.com/">
+						<img src="images/nba.jpg" alt="NBA">
+						<h3>NBA</h3>
+					</a></li>
+				</ul>
+				<ul data-role="listview">
+					<li><a href="http://espn.go.com/mens-college-basketball/">
+						<img src="images/ncaa.jpg" alt="College">
+						<h3>NCAA</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="baseball" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<div>
+			<h2 align="center">Baseball</h2>
+				<ul data-role="listview">
+					<li><a href="http://www.mlb.com//">
+						<img src="images/mlb.jpg" alt="MLB">
+						<h3>MLB</h3>
+					</a></li>
+				</ul>
+				<ul data-role="listview">
+					<li><a href="http://www.collegebaseballinsider.com/">
+						<img src="images/ncaa.jpg" alt="College">
+						<h3>College</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="boxing" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<div>
+			<h2 align="center">Boxing</h2>
+				<ul data-role="listview">
+					<li><a href="http://espn.go.com/boxing/">
+						<img src="images/boxing.jpg" alt="Boxing">
+						<h3>Pro Boxing</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="clothes" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Clothes</h2>
+				<ul data-role="listview">
+					<li><a href="http://www.gq.com/">
+						<img src="images/gq.jpg" alt="GQ">
+						<h3>GQ</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="diet" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>	
+		<div data-role="content">
+			<div>
+			<h2 align="center">Diet</h2>
+				<ul data-role="listview">
+					<li><a href="http://www.mensfitness.com/">
+						<img src="images/mf.jpg" alt="Men Fitness">
+						<h3>Men's Fitness</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>			
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="food" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<div>
+			<h2 align="center">Food</h2>
+				<ul data-role="listview">
+					<li><a href="http://www.foodnetwork.com/">
+						<img src="images/food.jpg" alt="Food">
+						<h3>Food Network</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>		
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="fitness" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Fitness</h2>
+				<ul data-role="listview">
+					<li><a href="http://www.bodybuilding.com/">
+						<img src="images/fitness.jpg" alt="Fitness">
+						<h3>Bodybuilding.com</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>		
+		<div data-role="navbar" data-id="mainnav" data-theme="c"data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="games" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<div>
+			<h2 align="center">Games</h2>
+				<ul data-role="listview">
+					<li><a href="http://www.gamefly.com/">
+						<img src="images/game.jpg" alt="Games">
+						<h3>Gamefly</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="hockey" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2>Hockey</h2>
+				<ul data-role="listview">
+					<li><a href="www.nhl.com/">
+						<img src="images/nhl.jpg" alt="NHL">
+						<h3>NHL</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="mma" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>	
+		<div data-role="content">
+			<div>
+			<h2 align="center">MMA</h2>
+				<ul data-role="listview">
+					<li><a href="www.ufc.com/">
+						<img src="images/mma.jpg" alt="MMA">
+						<h3>UFC</h3>
+					</a></li>
+				</ul>
+				<ul data-role="listview">
+					<li><a href="espn.go.com/mma/">
+						<img src="images/mma2.jpg" alt="MMA/ESPN">
+						<h3>ESPN</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>		
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="money" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>	
+		<div data-role="content">
+			<div>
+			<h2 align="center">Money</h2>
+				<ul data-role="listview">
+					<li><a href="online.wsj.com/">
+						<img src="images/money.jpg" alt="WSJ">
+						<h3>Wall Street Journal</h3>
+					</a></li>
+				</ul>
+				<ul data-role="listview">
+					<li><a href="www.bloomberg.com/">
+						<img src="images/bloomberg.jpg" alt="Bloomberg">
+						<h3>Bloomberg</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="news" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<div>
+			<h2 align="center">News</h2>
+				<ul data-role="listview">
+					<li><a href="www.cnn.com/">
+						<img src="images/cnn.jpg" alt="CNN">
+						<h3>CNN</h3>
+					</a></li>
+				</ul>
+				<ul data-role="listview">
+					<li><a href="www.foxnews.com/">
+						<img src="images/foxnews.jpg" alt="Fox">
+						<h3>Fox News</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="soccer" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<div>
+			<h2 align="center">Soccer</h2>
+				<ul data-role="listview">
+					<li><a href="www.mlssoccer.com/">
+						<img src="images/mls.jpg" alt="MLS">
+						<h3>MLS</h3>
+					</a></li>
+				</ul>
+				<ul data-role="listview">
+					<li><a href="www.premierleague.com/">
+						<img src="images/barclays.jpg" alt="BPL">
+						<h3>Premier League</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="shoes" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>	
+		<div data-role="content">
+			<div>
+			<h2 align="center">Shoes</h2>
+				<ul data-role="listview">
+					<li><a href="www.footlocker.com/">
+						<img src="images/footlocker.jpg" alt="Footlocker">
+						<h3>Foot Locker</h3>
+					</a></li>
+				</ul>
+				<ul data-role="listview">
+					<li><a href="www.zappos.com/shoes">
+						<img src="images/zappos.jpg" alt="Zappos">
+						<h3>Zappos</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="trackandfield" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>	
+		<div data-role="content">
+			<div>
+			<h2 align="center">Track and Field</h2>
+				<ul data-role="listview">
+					<li><a href="www.trackandfieldnews.com/">
+						<img src="images/trackandfield.jpg" alt="Track and Field">
+						<h3>Track and Field News</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>		
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="tennis" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>	
+		<div data-role="content">
+			<div>
+			<h2 align="center">Tennis</h2>
+				<ul data-role="listview">
+					<li><a href="www.tennis.com/">
+						<img src="images/tennis.jpg" alt="Tennis">
+						<h3>Tennis.com</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>		
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="women" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Women</h2>
+				<ul data-role="listview">
+					<li><a href="news.menshealth.com/be-more-popular—without...a.../21/">
+						<img src="images/women.jpg" alt="Women">
+						<h3>Advice for Guys</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="clothes2" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Clothes</h2>
+				<ul data-role="listview">
+					<li><a href="www.charlotterusse.com/">
+						<img src="images/clothes1.jpg" alt="clothes1">
+						<h3>Charlotte Russe</h3>
+					</a></li>
+				</ul>
+				
+				<ul data-role="listview">
+					<li><a href="www.macys.com/">
+						<img src="images/clothes2.jpg" alt="clothes2">
+						<h3>Macy's</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="diet2" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Diet</h2>
+				<ul data-role="listview">
+					<li><a href="www.webmd.com/diet/default.htm">
+						<img src="images/health1.jpg" alt="health1">
+						<h3>WebMD</h3>
+					</a></li>
+				</ul>
+				
+				<ul data-role="listview">
+					<li><a href="www.womenshealthmag.com/">
+						<img src="images/health2.jpg" alt="health2">
+						<h3>Women's Health</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="fashion" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Fashion</h2>
+				<ul data-role="listview">
+					<li><a href="www.vogue.com/">
+						<img src="images/vogue.jpg" alt="vogue">
+						<h3>Vogue</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="fitness2" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Fitness</h2>
+				<ul data-role="listview">
+					<li><a href="www.fitnessmagazine.com/">
+						<img src="images/fitness2.jpg" alt="fitness2">
+						<h3>Fitness</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="gossip" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Gossip</h2>
+				<ul data-role="listview">
+					<li><a href="www.tmz.com/">
+						<img src="images/tmz.jpg" alt="tmz">
+						<h3>TMZ</h3>
+					</a></li>
+				</ul>
+				
+				<ul data-role="listview">
+					<li><a href="www.mediatakeout.com/">
+						<img src="images/mto.jpg" alt="mto">
+						<h3>MediaTakeout</h3>
+					</a></li>
+				</ul>
+				
+				<ul data-role="listview">
+					<li><a href="necolebitchie.com/">
+						<img src="images/bitchie.jpg" alt="bitchie">
+						<h3>NecoleBitchie</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="makeup" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">Makeup</h2>
+				<ul data-role="listview">
+					<li><a href="www.maccosmetics.com/">
+						<img src="images/mac.jpg" alt="mac">
+						<h3>M·A·C</h3>
+					</a></li>
+				</ul>
+				
+				<ul data-role="listview">
+					<li><a href="www.loreal.com/">
+						<img src="images/loreal.jpg" alt="loreal">
+						<h3>Loreal</h3>
+					</a></li>
+				</ul>
+				
+				<ul data-role="listview">
+					<li><a href="www.covergirl.com/">
+						<img src="images/covergirl.jpg" alt="covergirl">
+						<h3>CoverGirl</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="tv" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>		
+		<div data-role="content">
+			<div>
+			<h2 align="center">TV</h2>
+				<ul data-role="listview">
+					<li><a href="www.bravotv.com/">
+						<img src="images/bravo.jpg" alt="bravo">
+						<h3>Bravo</h3>
+					</a></li>
+				</ul>
+				
+				<ul data-role="listview">
+					<li><a href="www.vh1.com/">
+						<img src="images/vh1.jpg" alt="vh1">
+						<h3>Vh1</h3>
+					</a></li>
+				</ul>
+				
+				<ul data-role="listview">
+					<li><a href="www.oprah.com/own">
+						<img src="images/own.jpg" alt="own">
+						<h3>OWN</h3>
+					</a></li>
+				</ul>
+			</div>		
+		</div>	
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="todo" id="gamerecord" data-theme="e">
+		
+		<div data-role="header" data-position="fixed">
+			<h1 align="center"> Shot <img src="images/miup1.jpg" alt="NT" style="width:50px;height:50px"> Tracker </h1>
+		</div>
+		<div data-role="content">
+			<h1 align="center">To-Do List</h1>
+				<ul data-role="listview">
+				<h2>This is what I have done so far:</h2>
+					<h3 data-role="list-divider" align="center">Thursday</h3>
+					<li>Game vs. Raptors  
+						Points Scored: 20 
+					</li>
+					
+					<h3 data-role="list-divider" align="center">Friday</h3>
+					<li>Game vs Blue Jays. I went 8 for 8.  
+						Points Scored: 25
+					</li>
+					
+					<li>Pickup game, I fouled out. Bad game 
+						Points Scored: 12
+					</li>
+					
+					<h3 data-role="list-divider" align="center">Saturday</h3>
+					<li>Game vs Lakers. I won game MVP  
+						Points Scored: 30
+					</li>
+					
+					<li>Post-game shootaround.  
+						Points Scored: 40
+					</li>
+					
+					<h3 data-role="list-divider" align="center">Last Week</h3>
+					<li>Game of 21 with Phil 
+						Points Scored: 19
+					</li>
+					
+					<li>Mock 3 point contest  
+						Points Scored: 18
+					</li>				
+				</ul>	
+			<p>Note Tracker is a free application aimed at helping users track things they may easily forget.</p>
+		</div>
+		<div data-role="navbar" data-id="mainnav" data-theme="c" data-position="fixed">
+			<ul>
+				<li><a href="#homescreen" data-icon="star" data-iconpos="bottom" data-transition="slide">Home</a></li>	
+				<li><a href="#gamerecord" data-icon="star" data-iconpos="bottom" data-transition="slide">Game Logs</a></li>	
+				<li><a href="#about" data-icon="star" data-iconpos="bottom" data-transition="slide">About</a></li>
+			</ul>
+		</div>
+	</div>
+</div>	
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.0.0.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+</body>
+</html>
