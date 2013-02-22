@@ -15,40 +15,48 @@
 	</head>
 	<body id="gameform">
 		<h1>Shot Tracker</h1>
-	 
-	 	
-		<form id="myContent">
+		<form id="ShotForm">
 		  		<fieldset>
 		  			<legend>
 		  			<ul id="errors"></ul>
 		  			<ul style="list-style: none;" id="formfield">
-						<li id="select"><label for="PositionPlayed">Position Played:</label></li>
+						<li id="select"><label for="posplayed">Position Played:</label></li>
+						
+						<li><label for="home">Your Team</label></li>
+							<input type="text" id="home" name="home" value="Your Team" />
+						
+						<li><label for="against">Team Played Against</label></li>
+							<input type="text" id="against" name="against" value="Opp. Team" /> 
 					
-						<li><label for="Date">Date:</label> <input type="date" name="Date" id="Date"></li> 
+						<li><label for="date">Date:</label></li> 
+							<input type="date" name="date" id="date"> 
 							
-						<li><label for="PointsScored">Points Scored</label></li>
-							<input type="range" min="0" max="100" id="PointsScored" />
+						<li><label for="pointsscored">Points Scored</label></li>
+							<input type="range" min="0" max="100" id="pointsscored" name="pointsscored" />
 							
-						<li><label for="Start" id="Start">Did You Start?</label></li>
-					
-							<input type="radio" id="Yes" name="memory" value="Yes" />Yes<label for="Start"></label></li>
-							<input type="radio" id="No"  name="memory" value="No" />No<label for="Start"></label></li> 
-					
-						<li><label for="Notes">Game Notes:</label></li>
-							<textarea rows="10" cols="30" name="Notes" id="Notes"></textarea>
+						<li><label for="start" id="start">Did You Start?</label>
+							<ul class="checkbox">
+								<input type="radio" id="start" name="start" value="Yes" />Yes<label for="start"></label></li>
+								<input type="radio" id="start"  name="start" value="No" />No<label for="start"></label></li> 
+							</ul>
+						</li>
+						
+						<li><label for="notes">Game Notes:</label></li>
+							<textarea rows="10" cols="30" name="notes" id="notes"></textarea>
 							
 						<li><label for="Submit"></label></li>
 							<input type="Submit" value="Add Game" id="Submit" name="Submit" />
 					</ul>
-				</legend>
+					</legend>
 			</fieldset>
 		</form>
 		<ul style="list-style: none;">
-		<a href="#" id="clear"> Clear Stored Data </a> &nbsp;
-	 	<a href="#" id="displaylink"> Display Data </a> &nbsp;
-		<a href="appformvfw.html" id="addnew" input type="hidden"> Add New Note </a>
+			<a href="#" id="clear"> Clear Stored Data </a> &nbsp;
+	 		<a href="#" id="displaylink"> Display Data </a> &nbsp;
+			<a href="appformvfw.html" id="addnew" input type="hidden"> Add New Game </a>
 		<ul>
+		<script type="text/javascript" src="js/main.js"></script>	
+		<script type="text/javascript" src="js/new.js"></script>
 		<script type="text/javascript" src="js/json.js"></script>
-		<script type="text/javascript" src="js/new.js"></script>	
 	</body>
 </html>

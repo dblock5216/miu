@@ -3,49 +3,49 @@ var json = {
 		"positionplayed": ["Position Played: ", "SG"],
 		"date": ["Date: ", "02-16-2013"],
 		"pointsscored": ["Points Scored: ", "18"],
-		"start": ["Did You Start?: ", "Yes"],
+		"startvalue": ["Did You Start?: ", "Yes"],
 		"notes": ["Notes: ", "played the Spurs, went 7 for 13"]
 	},
 	 "game12": {
 		"positionplayed": ["Position Played: ", "SG"],
 		"date": ["Date: ", "02-18-2013"],
 		"pointsscored": ["Points Scored: ", "12"],
-		"start": ["Did You Start?: ", "Yes"],
+		"startvalue": ["Did You Start?: ", "Yes"],
 		"notes": ["Notes: ", "played the Spurs, went 7 for 13"]
 	},
 	"game3": {
 		"positionplayed": ["Position Played: ", "SG"],
 		"date": ["Date: ", "02-20-2013"],
 		"pointsscored": ["Points Scored: ", "28"],
-		"start": ["Did You Start?: ", "Yes"],
+		"startvalue": ["Did You Start?: ", "Yes"],
 		"notes": ["Notes: ", "played the Spurs, went 7 for 13"]
 	},
 	"game4": {
 		"positionplayed": ["Position Played: ", "SG"],
 		"date": ["Date: ", "02-22-2013"],
 		"pointsscored": ["Points Scored: ", "8"],
-		"start": ["Did You Start?: ", "Yes"],
+		"startvalue": ["Did You Start?: ", "Yes"],
 		"notes": ["Notes: ", "played the Spurs, went 7 for 13"]
 	},
 	"game5": {
 		"positionplayed": ["Position Played: ", "SG"],
 		"date": ["Date: ", "02-24-2013"],
 		"pointsscored": ["Points Scored: ", "17"],
-		"start": ["Did You Start?: ", "Yes"],
+		"startvalue": ["Did You Start?: ", "Yes"],
 		"notes": ["Notes: ", "played the Spurs, went 7 for 13"]
 	},
 	"game6": {
 		"positionplayed": ["Position Played: ", "SG"],
 		"date": ["Date: ", "02-25-2013"],
 		"pointsscored": ["Points Scored: ", "31"],
-		"start": ["Did You Start?: ", "Yes"],
+		"startvalue": ["Did You Start?: ", "Yes"],
 		"notes": ["Notes: ", "played the Spurs, went 7 for 13"]
 	},
 	"game7": {
 		"positionplayed": ["Position Played: ", "SG"],
 		"date": ["Date: ", "02-26-2013"],
 		"pointsscored": ["Points Scored: ", "13"],
-		"start": ["Did You Start?: ", "Yes"],
+		"startvalue": ["Did You Start?: ", "Yes"],
 		"notes": ["Notes: ", "played the Spurs, went 7 for 13"]
 	},
 	"game8": {
